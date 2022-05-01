@@ -15,15 +15,22 @@ extension TVShow {
             show.view { show in
             
                 HStack {
-                    VStack{
-                        HStack(alignment: .lastTextBaseline, spacing: 0){
-                            Text(show.voteFormatted)
-                                .font(.title3)
-                            Text("%")
-                                .font(.caption)
+                    ActivityRing(
+                        progress: show.votePercentage,
+                        color: .success,
+                        ringColor: .successBackground
+                    ) {
+                        VStack{
+                            HStack(alignment: .lastTextBaseline, spacing: 0){
+                                Text(show.voteFormatted)
+                                    .font(.title3)
+                                Text("%")
+                                    .font(.caption)
+                            }
+                            Text("Rating").font(.caption)
                         }
-                        Text("Rating").font(.caption)
                     }
+                    .frame(width: 75, height: 75)
                 }
             }
         }
