@@ -10,7 +10,7 @@ import Stores
 
 struct ContentView: View {
     var body: some View {
-        Text(Stores().text)
+        Text("Hello World")
             .padding()
     }
 }
