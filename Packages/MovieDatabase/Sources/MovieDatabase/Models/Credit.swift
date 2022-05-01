@@ -88,6 +88,6 @@ extension Credit: Codable {
 
 public struct Credits: Codable, Equatable {
     
-    let cast: [Credit]
-    let crew: [Credit]
+    public let cast: [Credit]
+    public let crew: [Credit]
 }

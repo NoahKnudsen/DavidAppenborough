@@ -10,8 +10,9 @@ public extension Person {
     
     struct Overview: View {
         
-        @StateObject var person: Observable<Person>
         @StateObject var service = MovieDatabaseService()
+        @StateObject var person: Observable<Person>
+        @StateObject var credits: Observable<Credits>
         
         public init(id: Person.ID) {
             
@@ -19,6 +20,7 @@ public extension Person {
             
             self._service = .init(wrappedValue: service)
             self._person = .init(wrappedValue: Observable(service.people.fetch(id)))
+            self._credits = .init(wrappedValue: Observable(service.credits.fetch(id)))
         }
         
         var navBarTitle: String { person.value?.name ?? .empty }
@@ -31,12 +33,13 @@ public extension Person {
                     }.navigationTitle(navBarTitle)
                     
                     Section(header: Text("Credits")) {
-                        Text("b")
+                        Credits.List()
                     }.navigationTitle(navBarTitle)
                 }
             }
             .environmentObject(service)
             .environmentObject(person)
+            .environmentObject(credits)
         }
     }
 }
