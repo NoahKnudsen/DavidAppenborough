@@ -16,6 +16,7 @@ let package = Package(
             dependencies: ["MovieDatabase"],
             resources: [
                 .copy("Resources/person-attenborough.json"),
+                .copy("Resources/credits-attenborough.json")
             ]
         ),
     ]
