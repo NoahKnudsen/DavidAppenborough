@@ -36,6 +36,7 @@ public extension Person {
                         Credits.List()
                     }.navigationTitle(navBarTitle)
                 }
+                Biography()
             }
             .environmentObject(service)
             .environmentObject(person)
