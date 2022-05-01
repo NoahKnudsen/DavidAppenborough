@@ -13,7 +13,10 @@ let package = Package(
         .package(path: "../Stores"),
     ],
     targets: [
-        .target(name: "MovieDatabase", dependencies: ["Foundational", "Stores"]),
+        .target(
+            name: "MovieDatabase",
+            dependencies: ["Foundational", "Stores"]
+        ),
         .testTarget(
             name: "MovieDatabaseTests",
             dependencies: ["MovieDatabase"],
