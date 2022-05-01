@@ -27,7 +27,7 @@ public extension Person {
             NavigationView {
                 List {
                     Section(header: Text("Biography")) {
-                        Text("a")
+                        Biography.Entry()
                     }.navigationTitle(navBarTitle)
                     
                     Section(header: Text("Credits")) {
