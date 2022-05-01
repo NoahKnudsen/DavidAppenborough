@@ -1,3 +1,3 @@
 # MovieDatabaseUI
 
-A description of this package.
+A collection of UI for The Movie Database

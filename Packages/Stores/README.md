@@ -1,3 +1,3 @@
 # Stores
 
-A description of this package.
+Storage and data persistence

@@ -1,3 +1,3 @@
 # MovieDatabase
 
-A description of this package.
+Models & Services for The Movie Database
