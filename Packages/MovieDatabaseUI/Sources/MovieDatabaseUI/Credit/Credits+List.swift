@@ -4,6 +4,7 @@
 
 import SwiftUI
 import Toolkit
+import MovieDatabase
 
 extension Credits {
 
@@ -12,13 +13,20 @@ extension Credits {
         @EnvironmentObject var service: MovieDatabaseService
         @EnvironmentObject var credits: Observable<Credits>
         
+        var sortedCredits: [Credit] {
+            credits.cast?
+                .unique(by: \.id)
+                .sortedNilsFirst(by: \.firstAirDate, order: .reverse)
+                ?? []
+        }
+        
         var body: some View {
             switch credits.state {
             case .noValue, .error:
                 Text("Loading...")
                 
-            case .value(let credits):
-                ForEach(credits.cast.unique(by: \.id)) { credit in
+            case .value:
+                ForEach(sortedCredits) { credit in
                     NavigationLink(destination: {
                         TVShow.Detail()
                             .environmentObject(
