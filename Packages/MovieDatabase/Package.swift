@@ -11,6 +11,12 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(name: "MovieDatabase", dependencies: []),
-        .testTarget(name: "MovieDatabaseTests", dependencies: ["MovieDatabase"]),
+        .testTarget(
+            name: "MovieDatabaseTests",
+            dependencies: ["MovieDatabase"],
+            resources: [
+                .copy("Resources/person-attenborough.json"),
+            ]
+        ),
     ]
 )
