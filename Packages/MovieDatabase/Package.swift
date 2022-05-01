@@ -9,10 +9,11 @@ let package = Package(
         .library(name: "MovieDatabase", targets: ["MovieDatabase"]),
     ],
     dependencies: [
-        .package(path: "../Stores")
+        .package(path: "../Foundational"),
+        .package(path: "../Stores"),
     ],
     targets: [
-        .target(name: "MovieDatabase", dependencies: ["Stores"]),
+        .target(name: "MovieDatabase", dependencies: ["Foundational", "Stores"]),
         .testTarget(
             name: "MovieDatabaseTests",
             dependencies: ["MovieDatabase"],

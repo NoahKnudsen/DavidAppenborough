@@ -2,7 +2,7 @@
 //  Created by Noah Knudsen on 01/05/2022.
 //
 
-import Foundation
+import Foundational
 
 public struct Person: Equatable {
     

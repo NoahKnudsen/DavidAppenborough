@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension Date.FormatStyle {
+public extension Date.FormatStyle {
     
     static let yyyymmdd_dashed = Date.ISO8601FormatStyle().year().month().day().dateSeparator(.dash)
 }

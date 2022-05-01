@@ -4,11 +4,11 @@
 
 import Foundation
 
-extension CustomDebugStringConvertible {
+public extension CustomDebugStringConvertible {
     
     @inlinable
     @discardableResult
-    public func peek<Message>(
+    func peek<Message>(
         _ message: @autoclosure () -> Message
     ) -> Self {
         #if DEBUG

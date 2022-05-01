@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension URL {
+public extension URL {
     
     init(_ string: StaticString) {
         guard let url = URL(string: "\(string)") else {
