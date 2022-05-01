@@ -14,6 +14,8 @@
 		D4BCAE73281E9999008604EA /* DavidAppenboroughTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BCAE72281E9999008604EA /* DavidAppenboroughTests.swift */; };
 		D4BCAE7D281E9999008604EA /* DavidAppenboroughUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BCAE7C281E9999008604EA /* DavidAppenboroughUITests.swift */; };
 		D4BCAE7F281E9999008604EA /* DavidAppenboroughUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BCAE7E281E9999008604EA /* DavidAppenboroughUITestsLaunchTests.swift */; };
+		D4BCAE8D281E9A49008604EA /* Stores in Resources */ = {isa = PBXBuildFile; fileRef = D4BCAE8C281E9A49008604EA /* Stores */; };
+		D4BCAE90281E9A72008604EA /* Stores in Frameworks */ = {isa = PBXBuildFile; productRef = D4BCAE8F281E9A72008604EA /* Stores */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 		D4BCAE78281E9999008604EA /* DavidAppenboroughUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DavidAppenboroughUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BCAE7C281E9999008604EA /* DavidAppenboroughUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidAppenboroughUITests.swift; sourceTree = "<group>"; };
 		D4BCAE7E281E9999008604EA /* DavidAppenboroughUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidAppenboroughUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4BCAE8C281E9A49008604EA /* Stores */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Stores; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BCAE90281E9A72008604EA /* Stores in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +78,12 @@
 		D4BCAE55281E9998008604EA = {
 			isa = PBXGroup;
 			children = (
+				D4BCAE8B281E99DC008604EA /* Packages */,
 				D4BCAE60281E9998008604EA /* DavidAppenborough */,
 				D4BCAE71281E9999008604EA /* DavidAppenboroughTests */,
 				D4BCAE7B281E9999008604EA /* DavidAppenboroughUITests */,
 				D4BCAE5F281E9998008604EA /* Products */,
+				D4BCAE8E281E9A72008604EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +133,21 @@
 			path = DavidAppenboroughUITests;
 			sourceTree = "<group>";
 		};
+		D4BCAE8B281E99DC008604EA /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D4BCAE8C281E9A49008604EA /* Stores */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		D4BCAE8E281E9A72008604EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +164,9 @@
 			dependencies = (
 			);
 			name = DavidAppenborough;
+			packageProductDependencies = (
+				D4BCAE8F281E9A72008604EA /* Stores */,
+			);
 			productName = DavidAppenborough;
 			productReference = D4BCAE5E281E9998008604EA /* DavidAppenborough.app */;
 			productType = "com.apple.product-type.application";
@@ -232,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4BCAE69281E9999008604EA /* Preview Assets.xcassets in Resources */,
+				D4BCAE8D281E9A49008604EA /* Stores in Resources */,
 				D4BCAE66281E9999008604EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -583,6 +608,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4BCAE8F281E9A72008604EA /* Stores */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Stores;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D4BCAE56281E9998008604EA /* Project object */;
 }

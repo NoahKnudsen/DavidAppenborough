@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Stores
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text(Stores().text)
             .padding()
     }
 }
