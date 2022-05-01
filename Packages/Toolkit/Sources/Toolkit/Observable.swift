@@ -50,3 +50,37 @@ public extension Observable.State {
         }
     }
 }
+
+public extension Observable {
+    
+    /// Provide content, placeholder, and error views for the Obeservable's state
+    @ViewBuilder
+    func view<Placeholder, Error, Content>(
+        @ViewBuilder placeholder: () -> Placeholder,
+        @ViewBuilder error: (Swift.Error) -> Error,
+        @ViewBuilder content: (Value) -> Content
+    ) -> some View
+    where Placeholder: View, Error: View, Content: View
+    {
+        switch state {
+        case .noValue: placeholder()
+        case .error(let e): error(e)
+        case .value(let v): content(v)
+        }
+    }
+    
+    /// Provide a content view for the value state of the observable, and
+    /// Empty views for when theres no value or an error
+    @ViewBuilder
+    func view<Content>(
+        @ViewBuilder _ content: (Value) -> Content
+    ) -> some View
+    where Content: View
+    {
+        view(
+            placeholder: { EmptyView() },
+            error: { _ in EmptyView() },
+            content: content
+        )
+    }
+}

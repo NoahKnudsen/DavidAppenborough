@@ -36,8 +36,7 @@ extension Person {
         @EnvironmentObject var person: Observable<Person>
         
         var body: some View {
-            switch person.state {
-            case .value(let person):
+            person.view { person in
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 20) {
                         
@@ -74,9 +73,6 @@ extension Person {
                     }
                 }
                 .background(Color.background)
-
-            default:
-                EmptyView()
             }
         }
     }
