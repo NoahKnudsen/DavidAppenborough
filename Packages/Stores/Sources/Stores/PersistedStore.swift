@@ -60,6 +60,7 @@ struct PersistedStore<Key, Value> {
     }
 }
 
+
 extension PersistedStore {
     
     enum Policy {
@@ -68,5 +69,24 @@ extension PersistedStore {
         
         /// Returns the local value, then updates it with the remote once returned
         case localThenRemote
+    }
+}
+
+
+extension PersistedStore {
+    
+    init<LocalStore: WritableStore>(
+        fetchRemote: @escaping FetchRemote,
+        localStore: LocalStore,
+        policy: Policy = .localOrRemote
+    )
+    where LocalStore.Key == Key, LocalStore.Value == Value
+    {
+        self.init(
+            fetchRemote: fetchRemote,
+            fetchLocal: localStore.get,
+            writeLocal: localStore.set,
+            policy: policy
+        )
     }
 }

@@ -4,7 +4,15 @@
 
 public class InMemoryStore<Key: Hashable, Value>: WritableStore {
     
-    var store = [Key: Value]()
+    private(set) var store: [Key: Value]
+    
+    public init(){
+        self.store = [:]
+    }
+    
+    internal init(_ initialValues: [Key: Value]) {
+        self.store = initialValues
+    }
     
     public func `get`(_ key: Key) -> Value? {
         store[key]

@@ -77,6 +77,30 @@ final class PersistedStore_Tests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    func test_WritableStore_convienience_init() async throws {
+        
+        let localStore = InMemoryStore([1: "local"])
+        
+        let store = PersistedStore<Int, String>(
+            fetchRemote: const("remote"),
+            localStore: localStore
+        )
+        
+        let local = try await store.fetch(1).first(where: const(true))
+        let remote = try await store.fetch(2).first(where: const(true))
+        
+        XCTAssertEqual(local, "local")
+        XCTAssertEqual(remote, "remote")
+        
+        let persisted = Task<String?, Error> {
+            // TODO: Refactor
+            try await Task.sleep(nanoseconds: 1_000_000)
+            return localStore.store[2]
+        }
+        
+        let persistedValue = try await persisted.value
+        XCTAssertEqual(persistedValue, "remote")
+    }
 }
 
 
