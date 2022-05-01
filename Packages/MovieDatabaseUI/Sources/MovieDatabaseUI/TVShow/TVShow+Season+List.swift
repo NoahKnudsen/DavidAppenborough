@@ -23,6 +23,7 @@ extension TVShow.Season {
                             Text(season.name)
                                 .frame(maxWidth: 100)
                         }
+                        .accessibilityElement(children: .combine)
                     }
                 }
             }

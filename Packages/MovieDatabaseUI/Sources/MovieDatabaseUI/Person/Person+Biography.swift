@@ -72,7 +72,6 @@ extension Person {
                         .padding(.horizontal)
                     }
                 }
-                .background(Color.background)
             }
         }
     }

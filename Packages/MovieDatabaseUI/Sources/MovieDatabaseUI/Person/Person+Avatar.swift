@@ -26,6 +26,7 @@ extension Person {
                         .fill(Color.gray)
                 }
             )
+            .accessibilityLabel("\(person.name ?? "Loading") avatar")
         }
     }
 }

@@ -10,6 +10,7 @@ extension TVShow {
     struct Rating: View {
         
         @EnvironmentObject var show: Observable<TVShow>
+        @Environment(\.sizeCategory) var sizeCategory
         
         var body: some View {
             show.view { show in
@@ -24,13 +25,18 @@ extension TVShow {
                             HStack(alignment: .lastTextBaseline, spacing: 0){
                                 Text(show.voteFormatted)
                                     .font(.title3)
+                                    .dynamicTypeSize(.medium ... .accessibility2)
                                 Text("%")
-                                    .font(.caption)
+                                    .font(.system(size: 12))
                             }
-                            Text("Rating").font(.caption)
+                            if sizeCategory <= ContentSizeCategory.large {
+                                Text("Rating").font(.caption)
+                            }
                         }
                     }
                     .frame(width: 75, height: 75)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("\(show.voteFormatted)% rating")
                 }
             }
         }

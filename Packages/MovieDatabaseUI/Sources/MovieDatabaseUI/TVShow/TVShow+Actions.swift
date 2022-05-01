@@ -56,6 +56,7 @@ private extension TVShow.Actions {
                 .fill(.primary)
                 .overlay(content: {
                     Image(systemName: icon)
+                        .dynamicTypeSize(.medium ... .accessibility3)
                         .foregroundColor(.white)
                 })
                 .frame(minWidth: 30, maxWidth: 60, minHeight: 30, maxHeight: 60)
