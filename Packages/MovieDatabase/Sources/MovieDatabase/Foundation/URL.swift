@@ -13,4 +13,22 @@ extension URL {
         
         self = url
     }
+    
+    func appendingQueryItem(_ name: String, value: Any?) -> URL {
+        guard var urlComponents = URLComponents(string: absoluteString) else {
+            return self
+        }
+
+        var queryItems = urlComponents.queryItems?
+            .filter { $0.name.caseInsensitiveCompare(name) != .orderedSame }
+            ?? []
+
+        if let value = value {
+            queryItems.append(URLQueryItem(name: name, value: "\(value)"))
+        }
+
+        urlComponents.queryItems = queryItems
+        
+        return urlComponents.url ?? self
+    }
 }

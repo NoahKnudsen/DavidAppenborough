@@ -4,7 +4,7 @@
 
 import Foundation
 
-public enum Endpoint: Equatable, Hashable {
+enum Endpoint: Equatable, Hashable {
     
     case person(id: Person.ID)
     case credits(of: Person.ID)

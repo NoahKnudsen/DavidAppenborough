@@ -86,7 +86,7 @@ extension Credit: Codable {
     }
 }
 
-struct Credits: Codable, Equatable {
+public struct Credits: Codable, Equatable {
     
     let cast: [Credit]
     let crew: [Credit]

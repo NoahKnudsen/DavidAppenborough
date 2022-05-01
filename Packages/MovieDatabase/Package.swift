@@ -8,9 +8,11 @@ let package = Package(
     products: [
         .library(name: "MovieDatabase", targets: ["MovieDatabase"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(path: "../Stores")
+    ],
     targets: [
-        .target(name: "MovieDatabase", dependencies: []),
+        .target(name: "MovieDatabase", dependencies: ["Stores"]),
         .testTarget(
             name: "MovieDatabaseTests",
             dependencies: ["MovieDatabase"],
