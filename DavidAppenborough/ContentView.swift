@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Stores
+import MovieDatabase
 
 struct ContentView: View {
     var body: some View {
