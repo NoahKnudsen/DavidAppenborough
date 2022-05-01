@@ -1,7 +1,7 @@
 import XCTest
 @testable import Stores
 
-final class InMemoryStrore_Tests: XCTestCase {
+final class InMemoryStore_Tests: XCTestCase {
     
     func test_set_get() throws {
         
