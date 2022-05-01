@@ -45,6 +45,7 @@ extension UserDefaultsStore {
 private extension UserDefaultsStore {
     
     struct Box: Codable {
+        // TODO: Add meta data (eg updated datetime)
         var values: [Key: Value]
     }
     
