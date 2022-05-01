@@ -6,6 +6,14 @@ final class Person_Tests: XCTestCase {
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
     
+    func test_decode() throws {
+        
+        let test = Person.TestData.sirDavid
+        let decoded = try decoder.decode(Person.self, from: test.json())
+        
+        XCTAssertEqual(decoded, test.person)
+    }
+    
     func test_codable_identity() throws {
         
         let sirDavid = Person.TestData.sirDavid.person
@@ -34,7 +42,7 @@ extension Person {
                 placeOfBirth: "London, England, UK",
                 aliases: ["Sir David Attenborough"],
                 imagePath: "/tt3LW3XftcvxOZtMXmIaJSWFN7y.jpg",
-                biography: "biography"
+                biography: "bio"
             )
         )
         
