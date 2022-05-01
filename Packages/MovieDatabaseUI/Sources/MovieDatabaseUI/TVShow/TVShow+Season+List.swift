@@ -19,9 +19,9 @@ extension TVShow.Season {
                     ForEach(seasons.sorted(by: \.order)) { season in
                         VStack {
                             PosterImage(season)
-                                .frame(width: 100)
-                            
+                                .frame(width: 100, height: 150)
                             Text(season.name)
+                                .frame(maxWidth: 100)
                         }
                     }
                 }
