@@ -20,7 +20,7 @@ extension Credits {
             case .value(let credits):
                 ForEach(credits.cast.unique(by: \.id)) { credit in
                     NavigationLink(destination: {
-                        EmptyView()
+                        TVShow.Detail()
                             .environmentObject(
                                 Observable(service.shows.fetch(credit.mediaLinkId))
                             )

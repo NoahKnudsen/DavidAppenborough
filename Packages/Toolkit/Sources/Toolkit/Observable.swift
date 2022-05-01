@@ -28,6 +28,11 @@ public class Observable<Value>: ObservableObject {
     public subscript<T>(dynamicMember keyPath: KeyPath<Value, T>) -> T? {
         value?[keyPath: keyPath]
     }
+    
+    public subscript<T>(dynamicMember keyPath: KeyPath<Value, T?>) -> T?
+    {
+        value?[keyPath: keyPath].flatMap{ $0 }
+    }
 }
 
 public extension Observable {
