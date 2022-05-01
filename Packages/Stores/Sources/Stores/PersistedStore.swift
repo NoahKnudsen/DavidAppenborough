@@ -4,18 +4,18 @@
 
 import Foundation
 
-struct PersistedStore<Key, Value> {
+public struct PersistedStore<Key, Value> {
     
-    typealias FetchRemote = (Key) async throws -> Value
-    typealias FetchLocal = (Key) async throws -> Value?
-    typealias WriteLocal = (Key, Value) async throws -> ()
+    public typealias FetchRemote = (Key) async throws -> Value
+    public typealias FetchLocal = (Key) async throws -> Value?
+    public typealias WriteLocal = (Key, Value) async throws -> ()
     
     let fetchRemote: FetchRemote
     let fetchLocal: FetchLocal
     let writeLocal: WriteLocal
     let policy: Policy
     
-    init(
+    public init(
         fetchRemote: @escaping FetchRemote,
         fetchLocal: @escaping FetchLocal,
         writeLocal: @escaping WriteLocal,
@@ -27,7 +27,7 @@ struct PersistedStore<Key, Value> {
         self.policy = policy
     }
     
-    func fetch(_ key: Key) -> AsyncThrowingStream<Value, Error> {
+    public func fetch(_ key: Key) -> AsyncThrowingStream<Value, Error> {
         AsyncThrowingStream { continuation in
             Task {
                 
@@ -63,7 +63,7 @@ struct PersistedStore<Key, Value> {
 
 extension PersistedStore {
     
-    enum Policy {
+    public enum Policy {
         /// Returns the local value if it exists
         case localOrRemote
         
@@ -73,7 +73,7 @@ extension PersistedStore {
 }
 
 
-extension PersistedStore {
+public extension PersistedStore {
     
     init<LocalStore: WritableStore>(
         fetchRemote: @escaping FetchRemote,
