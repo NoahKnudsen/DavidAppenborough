@@ -99,7 +99,7 @@ public extension TVShow {
         public let name: String
     }
     
-    struct Season: Codable, Equatable {
+    struct Season: Codable, Equatable, Identifiable {
         
         public typealias ID = Int
         

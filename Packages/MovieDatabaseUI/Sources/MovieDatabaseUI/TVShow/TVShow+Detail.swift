@@ -44,7 +44,12 @@ extension TVShow {
                                 title: "Overview",
                                 value: show.overview
                             )
-
+                            
+                            LabelGroup(
+                                title: "Seasons",
+                                content: { Season.List(seasons: show.seasons) }
+                            )
+                            
                         }.padding(.horizontal)   
                     }
                 }

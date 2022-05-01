@@ -37,4 +37,8 @@ extension PosterImage {
     init(_ credit: Credit) {
         self.init(url: credit.posterURL, name: credit.titleOrName)
     }
+    
+    init(_ season: TVShow.Season) {
+        self.init(url: season.posterURL, name: season.name)
+    }
 }
