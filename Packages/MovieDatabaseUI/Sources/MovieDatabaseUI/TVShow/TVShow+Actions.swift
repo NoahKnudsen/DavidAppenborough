@@ -26,6 +26,7 @@ extension TVShow {
                             Spacer()
                             actionCTAs()
                         }
+                        .padding(.top, 10)
                     }
                     .padding()
                     .frame(maxWidth: .infinity)

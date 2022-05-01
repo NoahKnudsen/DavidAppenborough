@@ -13,14 +13,16 @@ extension TVShow {
         
         var body: some View {
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
                     
                     Hero()
+                        .ignoresSafeArea()
                     
                     show.view { show in
                     
                         Actions()
+                        
                         
                         LabelGroup.list {
                             
@@ -53,7 +55,9 @@ extension TVShow {
                         }.padding(.horizontal)   
                     }
                 }
-            }.background(.background)
+            }
+            .background(.background)
+            
         }
     }
 }

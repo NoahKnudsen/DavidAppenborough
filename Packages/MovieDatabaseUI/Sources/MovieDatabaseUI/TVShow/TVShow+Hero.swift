@@ -27,7 +27,8 @@ extension TVShow {
                             .fill(Color.gray)
                     }
                 )
-                .frame(maxWidth: .infinity)
+                .ignoresSafeArea()
+                .frame(maxWidth: .infinity, maxHeight: 275)
                 .blur(radius: 50)
                 
                 PosterImage(
