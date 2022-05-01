@@ -58,6 +58,25 @@ final class PersistedStore_Tests: XCTestCase {
         wait(for: [exp], timeout: 0.1)
     }
     
+    func test_local_then_remote_policy() async throws {
+        
+        let store = PersistedStore<Int, String>(
+            fetchRemote: { k in "remote \(k)" },
+            fetchLocal: { k in "local \(k)" },
+            writeLocal: { _,_ in },
+            policy: .localThenRemote
+        )
+        
+        let expected = ["local 1","remote 1"]
+        var actual: [String] = []
+        
+        for try await value in store.fetch(1) {
+            actual.append(value)
+        }
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
 }
 
 

@@ -6,9 +6,26 @@ import Foundation
 
 struct PersistedStore<Key, Value> {
     
-    let fetchRemote: (Key) async throws -> Value
-    let fetchLocal: (Key) async throws -> Value?
-    let writeLocal: (Key, Value) async throws -> ()
+    typealias FetchRemote = (Key) async throws -> Value
+    typealias FetchLocal = (Key) async throws -> Value?
+    typealias WriteLocal = (Key, Value) async throws -> ()
+    
+    let fetchRemote: FetchRemote
+    let fetchLocal: FetchLocal
+    let writeLocal: WriteLocal
+    let policy: Policy
+    
+    init(
+        fetchRemote: @escaping FetchRemote,
+        fetchLocal: @escaping FetchLocal,
+        writeLocal: @escaping WriteLocal,
+        policy: Policy = .localOrRemote
+    ) {
+        self.fetchRemote = fetchRemote
+        self.fetchLocal = fetchLocal
+        self.writeLocal = writeLocal
+        self.policy = policy
+    }
     
     func fetch(_ key: Key) -> AsyncThrowingStream<Value, Error> {
         AsyncThrowingStream { continuation in
@@ -17,8 +34,10 @@ struct PersistedStore<Key, Value> {
                 do { // Fetch from Local
                     if let local = try await fetchLocal(key) {
                         continuation.yield(local)
-                        continuation.finish()
-                        return
+                        if policy == .localOrRemote {
+                            continuation.finish()
+                            return
+                        }
                     }
                 } catch {
                     // Log decoding errors but continue on to fetch from remote
@@ -38,5 +57,16 @@ struct PersistedStore<Key, Value> {
                 }
             }
         }
+    }
+}
+
+extension PersistedStore {
+    
+    enum Policy {
+        /// Returns the local value if it exists
+        case localOrRemote
+        
+        /// Returns the local value, then updates it with the remote once returned
+        case localThenRemote
     }
 }
