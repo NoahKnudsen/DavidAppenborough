@@ -4,6 +4,7 @@
 
 import SwiftUI
 
+@dynamicMemberLookup
 public class Observable<Value>: ObservableObject {
     
     @Published public var state: State<Value> = .noValue
@@ -22,6 +23,10 @@ public class Observable<Value>: ObservableObject {
         } catch {
             self.state = .error(error)
         }
+    }
+    
+    public subscript<T>(dynamicMember keyPath: KeyPath<Value, T>) -> T? {
+        value?[keyPath: keyPath]
     }
 }
 

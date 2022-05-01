@@ -19,7 +19,7 @@ extension Person.Biography {
                     Person.Avatar()
                         .frame(width: 100, height: 100)
                  
-                    Text(person.value?.biography ?? "Loading...")
+                    Text(person.biography ?? "Loading...")
                         .lineLimit(5)
                 }
                 .padding(.vertical)

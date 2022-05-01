@@ -14,7 +14,7 @@ extension Person {
         
         var body: some View {
             AsyncImage(
-                url: person.value?.imageURL,
+                url: person.imageURL,
                 content: { image in
                     image
                         .resizable()
