@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "0E4021BF-1897-40FE-B11D-701B4E0D94BF"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5296A62-A8A3-47EA-8FC2-22C659DFCA87"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Packages/MovieDatabase/Tests/MovieDatabaseTests/Service/MovieDatabaseService+Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "test_calls_person_endpoint()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D5296A62-A8A3-47EA-8FC2-22C659DFCA87 - abeda11a7cd20350"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URLRequest) -&gt; (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) in MovieDatabaseTests.MovieDatabaseService_Tests.test_calls_person_endpoint() async throws -&gt; ()"
+                  moduleName = "MovieDatabaseTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nkn05/Repos/DavidAppenborough/Packages/MovieDatabase/Tests/MovieDatabaseTests/Service/MovieDatabaseService+Tests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "D5296A62-A8A3-47EA-8FC2-22C659DFCA87 - 2f033ad074b97b15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URLRequest) -&gt; (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) in MovieDatabaseTests.MovieDatabaseService_Tests.test_calls_person_endpoint_and_returns_Person_model() async throws -&gt; ()"
+                  moduleName = "MovieDatabaseTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nkn05/Repos/DavidAppenborough/Packages/MovieDatabase/Tests/MovieDatabaseTests/Service/MovieDatabaseService+Tests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

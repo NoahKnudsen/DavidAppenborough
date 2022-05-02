@@ -6,3 +6,11 @@ public extension String {
     
     static var empty = ""
 }
+
+extension String {
+    
+    struct Error: Swift.Error, CustomStringConvertible {
+        let description: String
+        init(_ description: String) { self.description = description }
+    }
+}
