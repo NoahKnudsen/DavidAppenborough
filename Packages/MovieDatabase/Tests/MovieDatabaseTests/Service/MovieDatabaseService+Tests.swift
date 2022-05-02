@@ -27,7 +27,7 @@ final class MovieDatabaseService_Tests: XCTestCase {
         }
         
         for try await result in service.people.fetch(1) {
-            XCTAssertEqual(result, expectedResult.person)
+            XCTAssertEqual(result, expectedResult.model)
         }
         
         await waitForExpectations(timeout: 0.1)
@@ -45,7 +45,7 @@ final class MovieDatabaseService_Tests: XCTestCase {
         }
         
         for try await result in service.credits.fetch(2) {
-            XCTAssertEqual(result, expectedResult.credits)
+            XCTAssertEqual(result, expectedResult.model)
         }
         
         await waitForExpectations(timeout: 0.1)
@@ -88,14 +88,14 @@ final class MovieDatabaseService_Tests: XCTestCase {
         }
         
         for try await result in service.shows.fetch(creditLinkId) {
-            XCTAssertEqual(result, expectedResult.show)
+            XCTAssertEqual(result, expectedResult.model)
         }
         
         await waitForExpectations(timeout: 0.1)
     }
 }
 
-fileprivate class URLSessionMock: URLSession {
+class URLSessionMock: URLSession {
     
     var handler: (URLRequest) -> (Data?, URLResponse?, Error?) = { _ in
         (nil, nil, String.Error("URLSessionMock handler not implemented"))
@@ -114,7 +114,7 @@ fileprivate class URLSessionMock: URLSession {
     }
 }
 
-fileprivate class URLSessionDataTaskMock: URLSessionDataTask {
+class URLSessionDataTaskMock: URLSessionDataTask {
     
     private let closure: () -> Void
 

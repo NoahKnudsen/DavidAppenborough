@@ -11,6 +11,6 @@ public extension String {
     
     struct Error: Swift.Error, CustomStringConvertible {
         public let description: String
-        init(_ description: String) { self.description = description }
+        public init(_ description: String) { self.description = description }
     }
 }

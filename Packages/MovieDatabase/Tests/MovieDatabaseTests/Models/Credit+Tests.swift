@@ -3,39 +3,25 @@ import XCTest
 
 final class Credit_Tests: XCTestCase {
     
-    let decoder = JSONDecoder()
-    let encoder = JSONEncoder()
-    
     func test_decode() throws {
         
-        let test = Credits.TestData.sirDavid
-        let decoded = try decoder.decode(Credits.self, from: test.json())
-        
-        XCTAssertEqual(decoded, test.credits)
+        try Credits.TestData.sirDavid.testDecode()
     }
     
     func test_codable_identity() throws {
         
-        let credits = Credits.TestData.sirDavid.credits
-        
-        let encoded = try encoder.encode(credits)
-        let decoded = try decoder.decode(Credits.self, from: encoded)
-        
-        XCTAssertEqual(decoded, credits)
+        try Credits.TestData.sirDavid.testCodableIdentity()
     }
 }
 
 
 extension Credits {
     
-    struct TestData {
+    enum TestData {
         
-        let jsonResource: String
-        let credits: Credits
-        
-        static let sirDavid = TestData(
+        static let sirDavid = TestDataModel(
             jsonResource: "credits-attenborough.json",
-            credits: Credits(
+            model: Credits(
                 cast: [
                     Credit(
                         id: 20784,
@@ -55,13 +41,5 @@ extension Credits {
                 crew: []
             )
         )
-        
-        func json() throws -> Data {
-            
-            guard let path = Bundle.module.url(forResource: jsonResource, withExtension: nil)
-            else { fatalError("Missing Test Item JSON file `\(jsonResource)`") }
-            
-            return try Data(contentsOf: path)
-        }
     }
 }

@@ -3,39 +3,25 @@ import XCTest
 
 final class TVShow_Tests: XCTestCase {
     
-    let decoder = JSONDecoder()
-    let encoder = JSONEncoder()
-    
     func test_decode() throws {
         
-        let test = TVShow.TestData.trialsOfLife
-        let decoded = try decoder.decode(TVShow.self, from: test.json())
-        
-        XCTAssertEqual(decoded, test.show)
+        try TVShow.TestData.trialsOfLife.testDecode()
     }
     
     func test_codable_identity() throws {
         
-        let show = TVShow.TestData.trialsOfLife.show
-        
-        let encoded = try encoder.encode(show)
-        let decoded = try decoder.decode(TVShow.self, from: encoded)
-        
-        XCTAssertEqual(decoded, show)
+        try TVShow.TestData.trialsOfLife.testCodableIdentity()
     }
 }
 
 
 extension TVShow {
     
-    struct TestData {
+    enum TestData {
         
-        let jsonResource: String
-        let show: TVShow
-        
-        static let trialsOfLife = TestData(
+        static let trialsOfLife = TestDataModel(
             jsonResource: "tvshow-trials-of-life.json",
-            show: TVShow(
+            model: TVShow(
                 id: 9552,
                 name: "The Trials of Life",
                 creators: [.init(name: "David Attenborough")],
@@ -60,13 +46,5 @@ extension TVShow {
                 ]
             )
         )
-        
-        func json() throws -> Data {
-            
-            guard let path = Bundle.module.url(forResource: jsonResource, withExtension: nil)
-            else { fatalError("Missing Test Item JSON file `\(jsonResource)`") }
-            
-            return try Data(contentsOf: path)
-        }
     }
 }
