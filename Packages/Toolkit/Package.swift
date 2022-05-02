@@ -15,10 +15,6 @@ let package = Package(
         .target(
             name: "Toolkit",
             dependencies: ["Foundational"]
-        ),
-        .testTarget(
-            name: "ToolkitTests",
-            dependencies: ["Toolkit"]
-        ),
+        )
     ]
 )
