@@ -15,9 +15,7 @@ The app is comprised of a number of small packages to seperate concerns and enca
 * [Stores](https://github.com/NoahKnudsen/DavidAppenborough/tree/main/Packages/Stores) - Storage structures and data persistence mechanisms
 * [MovieDatabase](https://github.com/NoahKnudsen/DavidAppenborough/tree/main/Packages/MovieDatabase) - Models and Services to represent and manage The Movie Database data
 * [Toolkit](https://github.com/NoahKnudsen/DavidAppenborough/tree/main/Packages/Toolkit) - A UI library containing project-non-specific, resuable SwiftUI views. 
-* [MovieDatabaseUI](https://github.com/NoahKnudsen/DavidAppenborough/tree/main/Packages/MovieDatabaseUI) - A collection of UI to present information from The Movie Database.
-
-Please refer to the README of each package for more information about their individual designs.   
+* [MovieDatabaseUI](https://github.com/NoahKnudsen/DavidAppenborough/tree/main/Packages/MovieDatabaseUI) - A collection of UI to present information from The Movie Database.  
 
 ### Technical Notes
 
