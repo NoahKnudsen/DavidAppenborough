@@ -7,7 +7,7 @@ public extension String {
     static var empty = ""
 }
 
-extension String {
+public extension String {
     
     struct Error: Swift.Error, CustomStringConvertible {
         let description: String

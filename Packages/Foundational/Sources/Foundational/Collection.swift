@@ -9,9 +9,9 @@ public extension Collection {
     var ifNotEmpty: Self? { isEmpty ? nil : self }
 }
 
-extension Collection {
+public extension Collection {
     
-    public func sorted<T: Comparable>(
+    func sorted<T: Comparable>(
         by f: (Element) throws -> T,
         order: SortOrder = .forward
     ) rethrows -> [Element] {
@@ -19,7 +19,7 @@ extension Collection {
         return try sorted(by: { try compare(f($0), f($1)) })
     }
     
-    public func sortedNilsFirst<T: Comparable>(
+    func sortedNilsFirst<T: Comparable>(
         by f: (Element) throws -> T?,
         order: SortOrder = .forward
     ) rethrows -> [Element] {
@@ -35,9 +35,9 @@ extension Collection {
     }
 }
 
-extension SortOrder {
+public extension SortOrder {
     
-    public func comparing<T: Comparable>(_ type: T.Type) -> (T, T) -> Bool {
+    func comparing<T: Comparable>(_ type: T.Type) -> (T, T) -> Bool {
         switch self {
         case .forward: return (<)
         case .reverse: return (>)
