@@ -23,7 +23,6 @@ extension TVShow {
                     
                         Actions()
                         
-                        
                         LabelGroup.list {
                             
                             LabelGroup.hiddenIfNil(
@@ -52,7 +51,8 @@ extension TVShow {
                                 content: { Season.List(seasons: show.seasons) }
                             )
                             
-                        }.padding(.horizontal)   
+                        }
+                        .padding([.horizontal, .bottom])
                     }
                 }
             }
