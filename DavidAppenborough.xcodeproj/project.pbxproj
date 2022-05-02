@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D4BCAE5E281E9998008604EA /* DavidAppenborough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DavidAppenborough.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4BCAE5E281E9998008604EA /* Appenborough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appenborough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BCAE61281E9998008604EA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D4BCAE65281E9999008604EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4BCAE8C281E9A49008604EA /* Stores */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Stores; sourceTree = "<group>"; };
@@ -43,8 +43,8 @@
 		D4BCAE55281E9998008604EA = {
 			isa = PBXGroup;
 			children = (
-				D4BCAE8B281E99DC008604EA /* Packages */,
 				D4BCAE60281E9998008604EA /* DavidAppenborough */,
+				D4BCAE8B281E99DC008604EA /* Packages */,
 				D4BCAE5F281E9998008604EA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,7 +52,7 @@
 		D4BCAE5F281E9998008604EA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4BCAE5E281E9998008604EA /* DavidAppenborough.app */,
+				D4BCAE5E281E9998008604EA /* Appenborough.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,7 +98,7 @@
 				D4585032281ED19D00B908D1 /* MovieDatabaseUI */,
 			);
 			productName = DavidAppenborough;
-			productReference = D4BCAE5E281E9998008604EA /* DavidAppenborough.app */;
+			productReference = D4BCAE5E281E9998008604EA /* Appenborough.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -297,7 +297,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.noahknudsen.DavidAppenborough;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Appenborough;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -325,7 +325,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.noahknudsen.DavidAppenborough;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Appenborough;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
