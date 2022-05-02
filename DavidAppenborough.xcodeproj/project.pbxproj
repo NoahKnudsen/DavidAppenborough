@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D4585033281ED19D00B908D1 /* MovieDatabaseUI in Frameworks */ = {isa = PBXBuildFile; productRef = D4585032281ED19D00B908D1 /* MovieDatabaseUI */; };
-		D4BCAE62281E9998008604EA /* DavidAppenboroughApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BCAE61281E9998008604EA /* DavidAppenboroughApp.swift */; };
+		D4BCAE62281E9998008604EA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BCAE61281E9998008604EA /* App.swift */; };
 		D4BCAE66281E9999008604EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4BCAE65281E9999008604EA /* Assets.xcassets */; };
 		D4BCAE8D281E9A49008604EA /* Stores in Resources */ = {isa = PBXBuildFile; fileRef = D4BCAE8C281E9A49008604EA /* Stores */; };
 		D4BCAE92281EAE82008604EA /* MovieDatabase in Resources */ = {isa = PBXBuildFile; fileRef = D4BCAE91281EAE82008604EA /* MovieDatabase */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		D4BCAE5E281E9998008604EA /* DavidAppenborough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DavidAppenborough.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4BCAE61281E9998008604EA /* DavidAppenboroughApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidAppenboroughApp.swift; sourceTree = "<group>"; };
+		D4BCAE61281E9998008604EA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D4BCAE65281E9999008604EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4BCAE8C281E9A49008604EA /* Stores */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Stores; sourceTree = "<group>"; };
 		D4BCAE91281EAE82008604EA /* MovieDatabase */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MovieDatabase; sourceTree = "<group>"; };
@@ -46,7 +46,6 @@
 				D4BCAE8B281E99DC008604EA /* Packages */,
 				D4BCAE60281E9998008604EA /* DavidAppenborough */,
 				D4BCAE5F281E9998008604EA /* Products */,
-				D4BCAE8E281E9A72008604EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,7 +60,7 @@
 		D4BCAE60281E9998008604EA /* DavidAppenborough */ = {
 			isa = PBXGroup;
 			children = (
-				D4BCAE61281E9998008604EA /* DavidAppenboroughApp.swift */,
+				D4BCAE61281E9998008604EA /* App.swift */,
 				D4BCAE65281E9999008604EA /* Assets.xcassets */,
 			);
 			path = DavidAppenborough;
@@ -77,13 +76,6 @@
 				D4BCAE98281ECCD0008604EA /* Toolkit */,
 			);
 			path = Packages;
-			sourceTree = "<group>";
-		};
-		D4BCAE8E281E9A72008604EA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4BCAE62281E9998008604EA /* DavidAppenboroughApp.swift in Sources */,
+				D4BCAE62281E9998008604EA /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

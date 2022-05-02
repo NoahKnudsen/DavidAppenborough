@@ -10,7 +10,7 @@ extension Person.ID {
 }
 
 @main
-struct DavidAppenboroughApp: App {
+struct DavidAppenborough: App {
     
     var body: some Scene {
         WindowGroup {
