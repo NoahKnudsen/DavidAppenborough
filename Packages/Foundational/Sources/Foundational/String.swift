@@ -10,7 +10,7 @@ public extension String {
 public extension String {
     
     struct Error: Swift.Error, CustomStringConvertible {
-        let description: String
+        public let description: String
         init(_ description: String) { self.description = description }
     }
 }
