@@ -1,7 +1,7 @@
 # David Appenborough
 ### A lightweight catalogue of David Attenborough's work. 
 
-Using [The Movie Db](https://www.themoviedb.org)'s API ([documentation](https://www.themoviedb.org/documentation/api)), this app presents a selection of information about David Attenborough and his TV work. I hope you enjoy reading through the code!
+Using [The Movie Db](https://www.themoviedb.org)'s [API](https://www.themoviedb.org/documentation/api), this app presents a selection of information about David Attenborough and his TV work. I hope you enjoy reading through the code!
 
 #### Features:
 * Biography
