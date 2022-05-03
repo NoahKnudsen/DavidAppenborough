@@ -8,6 +8,10 @@ Using [The Movie Db](https://www.themoviedb.org)'s API ([documentation](https://
 * List of TV Show credits
 * TV Show details
 * Offline mode
+* iPad/iPhone support
+* Dark/Light mode support
+* Accessibility considerations
+* Localisation considerations (date formatting)
 
 #### Design
 The app is comprised of a number of small packages to seperate concerns and encapsulate functionality. These packages are:
