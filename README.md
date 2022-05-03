@@ -17,6 +17,8 @@ The app is comprised of a number of small packages to seperate concerns and enca
 * [Toolkit](https://github.com/NoahKnudsen/DavidAppenborough/tree/main/Packages/Toolkit) - A UI library containing project-non-specific, resuable SwiftUI views. 
 * [MovieDatabaseUI](https://github.com/NoahKnudsen/DavidAppenborough/tree/main/Packages/MovieDatabaseUI) - A collection of UI to present information from The Movie Database.  
 
+Please refer to the README of each package for more information about their individual designs.
+
 ### Technical Notes
 
 The app is written using SwiftUI for it's interface and a number of modern Swift APIs such as the Swift Structured Concurrency suite (Actors, Async/Await, Tasks).
@@ -28,6 +30,8 @@ For offline storage I am storing the data in `UserDefaults` which is perfectly a
 ### Future improvements
 
 One future improvement I'd like to make would be to integrate a small [Ontology](https://en.wikipedia.org/wiki/Ontology_(information_science)) into the app using something like [Mindflare](https://github.com/thousandyears/MindFlare) to generate the Swift compile-time ontology language. The first usages of the ontology would be to provide human-friendly, unique identifiers to each significant piece of UI which in turn would enable a greater degree of modularity and testability. 
+
+While there is good test coverage for the app's logic, there are currently no tests for the UI. This is something that I hope to improve in the near future, most likely using [PointFree's Snapshot Testing library](https://github.com/pointfreeco/swift-snapshot-testing) which I have enjoyed using in the past. 
 
 ### References
 
